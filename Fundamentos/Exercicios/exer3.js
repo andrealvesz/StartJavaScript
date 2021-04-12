@@ -17,12 +17,16 @@ let family = {
 
 
 //criar uma função que soma os elementos do array
-function sum(array){
+function sum(array) {
     let total = 0
 
-    for(let value of array){  //crio um for para percorrer todo o array e pegar os valores dentro dele
-        total += value      //atribuir os valores do array ao total
-    }
+    // for (let value of array) {  //crio um for para percorrer todo o array e pegar os valores dentro dele
+    //     total += value      //atribuir os valores do array ao total
+    // }
+
+    array.forEach(value => {
+        total += value 
+    });
 
     return total
 }
@@ -41,14 +45,14 @@ function calcReceitasDespesas() {
     let statusPositivo = saldoTotal >= 0
     let statusNegativo = saldoTotal < 0
 
-    if (statusPositivo){
+    if (statusPositivo) {
         status = 'Positivo'
-    } else if (statusNegativo){
+    } else if (statusNegativo) {
         status = 'Negativo'
     }
 
     // return saldo com uma mensagem
-    return `Seu saldo é ${status}: R$ ${saldoTotal.toFixed(2)}` 
+    return `Seu saldo é ${status}: R$ ${saldoTotal.toFixed(2)}`
 }
 
 console.log(calcReceitasDespesas())
